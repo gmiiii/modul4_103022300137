@@ -20,9 +20,9 @@ namespace modul4_103022300137
             this.kodeProduk = kode;
         }
 
-        public string Kode
+        public string getKodeProduk
         {
-            get { return kodeProduk; }
+            get { return this.kodeProduk; }
         }
     }
 }
