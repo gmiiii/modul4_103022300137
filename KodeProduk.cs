@@ -9,20 +9,31 @@ namespace modul4_103022300137
 {
     public class KodeProduk
     {
-        string kodeProduk;
-
-        public KodeProduk(string kode)
+        //buat enum untuk produk elektronik yang tiap enum memiliki kode produk yang berbeda diambil dari list produk dan ditentukan pada method getKodeProduk
+        public enum ProdukElektronik
         {
-            if (kode.Length != 4)
+            LAPTOP,
+            SMARTPHONE,
+            TABLET,
+            HEADSET,
+            KEYBOARD,
+            MOUSE,
+            PRINTER,
+            MONITOR,
+            SMARTWATCH
+        }
+
+        private static String[] kodeProduk = { "E100", "E101", "E102", "E103", "E104", "E105", "E106", "E107", "E108", "E109" };
+
+        public String getKodeProduk() 
+        {
+            String kode = "";
+            foreach (ProdukElektronik produk in Enum.GetValues(typeof(ProdukElektronik)))
             {
-                throw new ArgumentException("Kode produk harus terdiri dari 10 karakter.");
+                kode += $"{produk.ToString()} - {kodeProduk[(int)produk]}\n";
             }
-            this.kodeProduk = kode;
+            return kode;
         }
 
-        public string getKodeProduk
-        {
-            get { return this.kodeProduk; }
-        }
     }
 }

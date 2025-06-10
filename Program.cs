@@ -5,17 +5,18 @@ namespace modul4_103022300137 {
     {
         static void Main(string[] args)
         {
-            try
-            {
-                Console.Write("Masukkan kode produk (4 karakter): ");
-                string input = Console.ReadLine();
-                KodeProduk produk = new KodeProduk(input);
-                Console.WriteLine($"Kode produk yang valid: {produk.getKodeProduk}");
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");//
-            }
+            // Membuat objek KodeProduk
+            KodeProduk kodeProduk = new KodeProduk();
+            Console.WriteLine("Daftar Kode Produk Elektronik:");
+            Console.WriteLine(kodeProduk.getKodeProduk());
+            // Membuat objek FanLaptop
+            FanLaptop fanLaptop = new FanLaptop();
+            Console.WriteLine("Mengatur mode kipas ke QUIET:");
+            fanLaptop.SetFanState("QUIET");
+            Console.WriteLine("Mengatur mode kipas ke BALANCED:");
+            fanLaptop.SetFanState("BALANCED");
+            Console.WriteLine("Mengatur mode kipas ke TURBO:");
+            fanLaptop.SetFanState("TURBO");
         }
     }
 }
